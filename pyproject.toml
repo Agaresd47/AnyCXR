@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anychest-public"
+version = "0.1.0"
+description = "Inference-only public package for AnyChest anatomical segmentation."
+readme = "README.md"
+authors = [
+  { name="Anonymous Authors" },
+]
+license = { text = "Free for non-commercial use" }
+requires-python = ">=3.9"
+keywords = ["chest", "x-ray", "anatomy", "segmentation", "pytorch"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python",
+    "Topic :: Scientific/Engineering",
+    "Operating System :: Unix",
+    "License :: Free for non-commercial use",
+]
+
+dependencies = [
+    "torch",
+    "torchvision",
+    "numpy",
+    "SimpleITK",
+    "scikit-image",
+    "opencv-python",
+    "colorcet",
+    "tqdm",
+    "pillow"
+]
+
+[project.scripts]
+anychest-infer = "seg:main"
+
+[tool.setuptools.package-data]
+cxas = ["data/*.json"]

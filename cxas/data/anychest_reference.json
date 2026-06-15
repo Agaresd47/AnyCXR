@@ -1,0 +1,150 @@
+{
+  "dataset_name": "Dataset003_Full",
+  "description": "Inference reference metadata packaged with the AnyChest public release.",
+  "class_names": [
+    "heart_ventricle_left",
+    "heart_atrium_left",
+    "heart_ventricle_right",
+    "heart_atrium_right",
+    "heart_myocardium",
+    "pulmonary_artery",
+    "heart",
+    "rib_left_1",
+    "rib_left_2",
+    "rib_left_3",
+    "rib_left_4",
+    "rib_left_5",
+    "rib_left_6",
+    "rib_left_7",
+    "rib_left_8",
+    "rib_left_9",
+    "rib_left_10",
+    "rib_left_11",
+    "rib_left_12",
+    "rib_right_1",
+    "rib_right_2",
+    "rib_right_3",
+    "rib_right_4",
+    "rib_right_5",
+    "rib_right_6",
+    "rib_right_7",
+    "rib_right_8",
+    "rib_right_9",
+    "rib_right_10",
+    "rib_right_11",
+    "rib_right_12",
+    "aorta",
+    "vertebrae_T2",
+    "vertebrae_T3",
+    "vertebrae_T4",
+    "vertebrae_T5",
+    "vertebrae_T6",
+    "vertebrae_T7",
+    "vertebrae_T8",
+    "vertebrae_T9",
+    "vertebrae_T10",
+    "vertebrae_T11",
+    "vertebrae_T12",
+    "aorta_long",
+    "lung_upper_lobe_left",
+    "lung_upper_lobe_right",
+    "lung_middle_lobe_right",
+    "lung_lower_lobe_left",
+    "lung_lower_lobe_right",
+    "clavicula_left",
+    "clavicula_right",
+    "humerus_left",
+    "humerus_right",
+    "sternum"
+  ],
+  "view_configs": {
+    "AP": {
+      "angle": 0,
+      "description": "",
+      "data_folder_name": "AP"
+    },
+    "22.5 Degree": {
+      "angle": 22.5,
+      "description": "mix of left and right degrees",
+      "data_folder_name": "225"
+    },
+    "Oblique 45 Degree": {
+      "angle": 45,
+      "description": "mix of left and right degrees",
+      "data_folder_name": "45"
+    },
+    "67.5 Degree": {
+      "angle": 67.5,
+      "description": "mix of left and right degrees",
+      "data_folder_name": "675"
+    },
+    "LA": {
+      "angle": 90,
+      "description": "mix of left-forward and right-forward LA views",
+      "data_folder_name": "LA"
+    },
+    "112.5 Degree": {
+      "angle": 112.5,
+      "description": "mix of left and right degrees",
+      "data_folder_name": "1125"
+    },
+    "Oblique 135 Degree": {
+      "angle": 135,
+      "description": "mix of left and right degrees",
+      "data_folder_name": "135"
+    },
+    "157.5 Degree": {
+      "angle": 157.5,
+      "description": "mix of left and right degrees",
+      "data_folder_name": "1575"
+    },
+    "PA": {
+      "angle": 180,
+      "description": "",
+      "data_folder_name": "PA"
+    }
+  },
+  "folder_reference": {
+    "root_entries": [
+      "1125",
+      "135",
+      "1575",
+      "225",
+      "45",
+      "675",
+      "AP",
+      "LA",
+      "PA",
+      "real_case",
+      "test_case",
+      "dataset.json"
+    ],
+    "training_view_folders": {
+      "AP": "AP/imagesTr",
+      "LA": "LA/imagesTr",
+      "PA": "PA/imagesTr",
+      "22.5 Degree": "225/imagesTr",
+      "Oblique 45 Degree": "45/imagesTr",
+      "67.5 Degree": "675/imagesTr",
+      "112.5 Degree": "1125/imagesTr",
+      "Oblique 135 Degree": "135/imagesTr",
+      "157.5 Degree": "1575/imagesTr"
+    },
+    "label_folders": {
+      "AP": "AP/labelsTr",
+      "LA": "LA/labelsTr",
+      "PA": "PA/labelsTr",
+      "22.5 Degree": "225/labelsTr",
+      "Oblique 45 Degree": "45/labelsTr",
+      "67.5 Degree": "675/labelsTr",
+      "112.5 Degree": "1125/labelsTr",
+      "Oblique 135 Degree": "135/labelsTr",
+      "157.5 Degree": "1575/labelsTr"
+    },
+    "notes": [
+      "PA contains additional flavor and paper_prepare subfolders in the training workspace.",
+      "LA contains a flavor subfolder in the training workspace.",
+      "real_case and test_case are evaluation-oriented layouts and are not required for public inference."
+    ]
+  }
+}
