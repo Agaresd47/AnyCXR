@@ -30,6 +30,26 @@ This installs the CLI command:
 anychest-infer --help
 ```
 
+## Docker
+
+This repository includes a containerized inference environment:
+
+- `Dockerfile`
+
+Build the image:
+
+```bash
+docker build -t anycxr-infer .
+```
+
+Run the CLI inside the container:
+
+```bash
+docker run --rm -it \
+  -v $(pwd):/workspace/AnyCXR \
+  anycxr-infer --help
+```
+
 ## Download Checkpoints
 
 Download the merged inference bundle from Hugging Face with the `hf` CLI:
@@ -56,6 +76,11 @@ Oblique profiles share one checkpoint and expose the following view-specific bun
 - `oblique_112_5`
 - `oblique_135`
 - `oblique_157_5`
+
+The Hugging Face release also includes:
+
+- a model card
+- `anychest_reference.json`
 
 ## Quick Start
 
@@ -109,6 +134,23 @@ anychest-infer \
   --profile oblique
 ```
 
+## Example Cases
+
+The repository includes example input/output cases derived from `Dataset003_Full/test_case`:
+
+- `examples/inputs/`
+- `examples/outputs/`
+- `examples/example_cases.json`
+- `examples/README.md`
+
+To regenerate the bundled examples after downloading the checkpoint bundle:
+
+```bash
+PYTHON_BIN=python \
+CHECKPOINT_PATH=./weights/anychest_inference_bundle.pt \
+bash scripts/build_example_cases.sh
+```
+
 ## Inputs
 
 The public CLI accepts:
@@ -148,6 +190,29 @@ It records:
 - the 54 output classes in inference order
 - the AnyChest view-to-angle mapping
 - the original `Dataset003_Full` folder names such as `225`, `45`, `LA`, and `PA`
+
+## Reproducing Evaluation
+
+The repository includes lightweight scripts for reproducing the public test-case evaluation workflow:
+
+- `scripts/evaluate_test_case.py`
+- `scripts/reproduce_main_eval.sh`
+
+Example:
+
+```bash
+PYTHON_BIN=python \
+CHECKPOINT_PATH=./weights/anychest_inference_bundle.pt \
+DATASET_DIR=/path/to/Dataset003_Full/test_case \
+bash scripts/reproduce_main_eval.sh
+```
+
+This generates:
+
+- prediction folders
+- `per_image_dice.csv`
+- `per_class_summary.csv`
+- `summary.json`
 
 ## Notes
 

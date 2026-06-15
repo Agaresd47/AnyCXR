@@ -1,0 +1,23 @@
+{
+  "source_dataset": "Dataset003_Full/test_case",
+  "cases": [
+    {
+      "profile": "la",
+      "view_name": "LA",
+      "input_relative_path": "inputs/la/train_743_a_1.png",
+      "output_relative_path": "outputs/la/LA"
+    },
+    {
+      "profile": "pa",
+      "view_name": "PA",
+      "input_relative_path": "inputs/pa/t_10955_a_1.png",
+      "output_relative_path": "outputs/pa/PA"
+    },
+    {
+      "profile": "oblique_45",
+      "view_name": "Oblique 45 Degree",
+      "input_relative_path": "inputs/oblique_45/train_12435_a_2.png",
+      "output_relative_path": "outputs/oblique_45/Oblique 45 Degree"
+    }
+  ]
+}
